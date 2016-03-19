@@ -21,9 +21,9 @@ public:
     	int pivot = nums[i];
     	while (i < j) {
     		while (i < j&&nums[j] >= pivot) --j;
-    		if (i < j) nums[i++] = nums[j];
+    		if (i < j) nums[i++] = nums[j]; // since (nums[j]<pivot), we put nums[j] into the first-half part
     		while (i < j&&nums[i] <= pivot) ++i;
-    		if (i < j) nums[j--] = nums[i];
+    		if (i < j) nums[j--] = nums[i]; // since (nums[i]>pivot), we put nums[i] into the last-half part
     	}
     	nums[i] = pivot;
     	return i;

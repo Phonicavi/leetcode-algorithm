@@ -16,7 +16,6 @@ public:
                 out.push(x);
             }
         }
-
         if (!out.empty()) {
             out.pop();
         }
@@ -31,7 +30,6 @@ public:
                 out.push(x);
             }
         }
-
         if (!out.empty()) {
             return out.top();
         }
