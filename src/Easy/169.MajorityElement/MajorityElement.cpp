@@ -6,7 +6,19 @@ using namespace std;
 
 class Solution {
 public:
-    int majorityElement(vector<int>& nums) {
+	int majorityElement(vector<int>& nums) {
+		int major = 0, count = 0;
+		for (auto itr = nums.begin(); itr != nums.end(); ++itr) {
+			if (!count) {
+				major = *itr;
+				count++;
+			} else if (major == *itr) count++;
+			else count--;
+		}
+		return major;
+	}
+
+    int majorityElementX(vector<int>& nums) {
         int major = nums[0];
         int count = 1;
         
