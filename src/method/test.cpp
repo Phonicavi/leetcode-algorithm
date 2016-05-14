@@ -2,6 +2,7 @@
 #include <string>
 #include <cstring>
 #include <vector>
+#include <cmath>
 using namespace std;
 
 void printDay(vector<int> v) {
@@ -43,6 +44,8 @@ int main(int argc, char const *argv[])
 			cout<<endl;
 		}
 	}
+
+	cout<<pow(0.9, 0.01)<<endl;
 
 	return 0;
 }
