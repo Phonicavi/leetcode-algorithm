@@ -30,9 +30,26 @@ public:
     }
 };
 
+
+void quick_sort(vector<int>& v, int l, int r)
+{
+    int i = l, j = r, mid = v[r];
+    do {
+        while (v[i] < mid) ++i;
+        while (v[j] > mid) --j;
+        if (i <= j) {
+            swap(v[i], v[j]);
+            // int tmp = v[j]; v[j] = v[i]; v[i] = tmp;
+            ++i; --j;
+        }
+    } while (i < j);
+    if (j > l) quick_sort(v, l, j);
+    if (i < r) quick_sort(v, i, r);
+}
+
 int main(int argc, char const *argv[])
 {
-	Solution a = Solution();
+	// Solution a = Solution();
 	vector<int> v;
 
 	v.push_back(3);
@@ -43,7 +60,8 @@ int main(int argc, char const *argv[])
 	v.push_back(2);
 	v.push_back(6);
 
-	a.quick_sort(v);
+	// a.quick_sort(v);
+    quick_sort(v, 0, v.size()-1);
 
 	for (int i=0; i<v.size(); ++i) {
 		cout<<v[i]<<'\t';
