@@ -4,10 +4,7 @@ using namespace std;
 struct Node {
 	int data;
 	Node *next;
-	Node(int _data=0) {
-		data = _data;
-		next = NULL;
-	}
+	Node(int _data=0):data(_data), next(NULL) {}
 };
 
 class LinkList {
@@ -75,8 +72,8 @@ public:
 		}
 		Node *current = head;
 		while (current->next) {
-			cout << current->next->data << " ";
 			current = current->next;
+			cout << current->data << " ";
 		}
 		cout << endl;
 		return ;
