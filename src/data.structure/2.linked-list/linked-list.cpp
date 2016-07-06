@@ -42,12 +42,12 @@ public:
 		return false;
 	}
 	Node *search(int value) const {
-		Node *current = head->next;
-		while (current) {
+		Node *current = head;
+		while (current->next) {
+			current = current->next;
 			if (value == current->data) {
 				return current;
 			}
-			current = current->next;
 		}
 		return NULL;
 	}
@@ -66,6 +66,7 @@ public:
 		}
 		return false;
 	}
+	
 	void print() const {
 		if (!(head->next)) {
 			return ;
