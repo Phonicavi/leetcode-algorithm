@@ -117,9 +117,9 @@ int main()
     // cout << a.search(0) << endl;
     // cout << a.search(1) << endl;
 
-    // 第一行输入n k
-    // 第二行输入n个数
-    // 将这n个数的顺序表循环左移k位
+    // first input: n k
+    // second input: n * nums
+    // rotate to left: k
     int n, k, x;
     cin >> n >> k;
     for (int i = 0; i < n; ++i) {
