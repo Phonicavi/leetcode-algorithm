@@ -2,6 +2,7 @@
 #include <cassert>
 using namespace std;
 
+// FILO: First In Last Out
 template <class Type> class Stack {
 private:
 	Type *data;
@@ -21,16 +22,17 @@ public:
 		data[++top_index] = element;
 		return true;
 	}
-	Type top() const {
-		assert(!empty());
-		return data[top_index];
-	}
 	bool pop() {
 		if (empty()) {
 			return false;
 		}
 		top_index--;
 		return true;
+	}
+
+	Type top() const {
+		assert(!empty());
+		return data[top_index];
 	}
 
 	bool empty() const {
@@ -43,7 +45,7 @@ public:
 
 int main()
 {
-	Stack<int> stack(10);
+	Stack<int> stack(15);
 
 	for (int i = 0; i < 20; ++i) {
 		if (stack.push(i)) {
