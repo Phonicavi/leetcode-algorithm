@@ -2,6 +2,7 @@
 #include <cassert>
 using namespace std;
 
+// FIFO: First In First Out
 class Queue {
 private:
 	int *data;
